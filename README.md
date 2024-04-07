@@ -1,14 +1,12 @@
 
+!!!!! IMPORTANT( DE CODE IS GEUPDATE HET ENIGE PROBLEEM WAT OVER IS IS DAT ZODRA IK 1 ITEM VERWIJDER DE DISCOUNT VERDWIJNT TERWIJL HET TOTAAL BEDRAG NOG BOVEN DE 20 DUS ALS IK 40 EUR0 HEB HOOR IK 5 DISCOUNT TE HEBBEN MAAR ALS IK
+1 ITEM VAN 12 EURO WEG HAAL IS MN DISCOUNT WEG TERWIJL IK NOG 35 EURO HEB IN MN CART 
 
 Ik heb een restaurant Ordering App gemaakt voor het eind project Javascript we sloten de allerlaatse module af met een solo Project.
 
 we kregen basic requirements die ik allemaal gehaald heb en nog wat stretch Goals.
 
 ik ben begonnen aan de stretch goal doormiddel van een Discount offering toe te voegen wanneer de prijs boven een bepaald aantal komt.
-
-
-Echter heb ik een probleem wanneer ik 2 items toe voeg dus bijvoorbeeld 2 hamburgers toevoeg die beiden 12$ zijn is mijn totaal 12 + 12 -5 = 19  Maar zodra ik 3 of meer hamburger toevoeg en ik er 2 verwijder blijf ik met een totaal van 17 terwijl
-ik 1 hamburger van 12 in mn mandje heb.
 
 wat hieronder is staat is alle code die met de functie aftrekken en de discount te maken heeft zie volledige code in de js file 
 
