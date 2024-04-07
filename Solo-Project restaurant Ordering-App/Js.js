@@ -47,20 +47,18 @@ function HideFormModal(){
 
 // Calculating the Total Price
 let TotalPrice = 0
-// let HasDiscount = false
+
 const CalculateTotalPrice = (Item, Discount = 0) => {
 
     const TotalAmount = document.getElementById("TotalPriceCount")
     TotalPrice += Item
-    TotalAmount.textContent = `$${TotalPrice}`
+    TotalAmount.textContent = ` $${TotalPrice}`
 
-    // if (HasDiscount && TotalPrice > 20) {
-    //     TotalPrice -= Discount
-    //     TotalAmount.textContent  = `Discount -$${Discount} $${TotalPrice}`
-    //
-    //
-    // }
-    // HasDiscount = !HasDiscount
+    if(TotalPrice > 20){
+        TotalAmount.textContent = `Discount -${Discount} ${Discount - TotalPrice}`
+
+    }
+
 }
 
 
@@ -68,21 +66,18 @@ const subtract = (item , Discount = 0 )=> {
     const TotalAmount = document.getElementById("TotalPriceCount")
     TotalPrice -= item
 
+    TotalAmount.textContent = `${Discount} $${TotalPrice}`
     if (TotalPrice <= 0) {
-        HideOrderContainer();
+        HideOrderContainer()
     }
-    TotalAmount.textContent = `$${TotalPrice}`
-        // else if (TotalPrice  < 20) {
-        //     TotalPrice -= Discount;
-        //     TotalAmount.textContent = `$${TotalPrice}`;
-        // }
 
 }
+
 
 const SubtractPriceFromTotal = DishID2 => {
     const FindPriceInArray = MenuArray.find(Item => Item.id === DishID2)
 
-   subtract(FindPriceInArray.price, 5)
+    subtract(FindPriceInArray.price)
 }
 
 
