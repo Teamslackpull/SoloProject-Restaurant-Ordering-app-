@@ -18,33 +18,27 @@ hier lusiteren we voor clicks en we kijken of E.target.classList de desbetreffen
                (SubtractPriceFromTotal(E.target.dataset.remove),E.target.closest(".Orders").remove()) : null
 
 
-
-Hier zetten we de totalprice naar 0
-
-let TotalPrice = 0
-
-Boolean die zegt of de in aanraking komen voor een discount is bij default false 
-// let HasDiscount = false
+ let TotalPrice = 0 
+ let HasDiscount = false
 
 dan maken we een function die 2 parameters in neemt Item en een default parameter die nog niet gebruikt wordt
+dan halen we het id van Totalprice op uit de DOM
+ We voegen TotalPrice tellen totalprice dit is nog null
+ hier kijken we of de Gebruiker in aamerking komt voor een discount hier gebruiken we een if statement voor en een logical NOT operator die steeds switched 
 
 const CalculateTotalPrice = (Item, Discount = 0) => {
-
-  dan halen we het id van Totalprice op uit de DOM
   
     const TotalAmount = document.getElementById("TotalPriceCount")
-    We voegen TotalPrice tellen totalprice dit is nog null
     TotalPrice += Item
     TotalAmount.textContent = `$${TotalPrice}`
+     
+     if (HasDiscount && TotalPrice > 20) {
+         TotalPrice -= Discount
+         TotalAmount.textContent  = `Discount -$${Discount} $${TotalPrice}`
     
-  hier kijken we of de Gebruiker in aamerking komt voor een discount hier gebruiken we een if statement voor en een logical NOT operator die steeds switched 
-    // if (HasDiscount && TotalPrice > 20) {
-    //     TotalPrice -= Discount
-    //     TotalAmount.textContent  = `Discount -$${Discount} $${TotalPrice}`
-    //
-    //
-    // }
-    // HasDiscount = !HasDiscount
+    
+     }
+     HasDiscount = !HasDiscount
 }
 
 hier maken we de subtract function 
@@ -57,21 +51,22 @@ const subtract = (item , Discount = 0 )=> {
         HideOrderContainer();
     }
     TotalAmount.textContent = `$${TotalPrice}`
-        // else if (TotalPrice  < 20) {
-        //     TotalPrice -= Discount;
-        //     TotalAmount.textContent = `$${TotalPrice}`;
-        // }
+         else if (TotalPrice  < 20) {
+             TotalPrice -= Discount;
+             TotalAmount.textContent = `$${TotalPrice}`;
+         }
 
 }
+
 Hier neemt de functie een parameter DishID2 die neemt de data van het argument van E.target.dataset.remove in
 
 const SubtractPriceFromTotal = DishID2 => {
-  Het gebruik van Find array method om het desbetreffende element die overeenkomt in de MenuArray
     const FindPriceInArray = MenuArray.find(Item => Item.id === DishID2)
-
-dan krijgt subtract de prijs van het desbetreffende geklikte product die wordt gegeven aan item
-
+    
    subtract(FindPriceInArray.price, 5)
 }
+
+ Het gebruik van Find array method om het desbetreffende element die overeenkomt in de MenuArray
+ dan krijgt subtract de prijs van het desbetreffende geklikte product die wordt gegeven aan item
 
 IK hoop dat dit je een goed begrip geeft van het probleem ( de discount wordt niet goed toegevoegd en verwijderd wanneer het totaal bedrag onder de 20 komt )
