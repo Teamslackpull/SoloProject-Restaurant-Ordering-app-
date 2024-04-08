@@ -113,7 +113,7 @@ const FindFoodArray = DishID => {
 
 function RenderMenuCard(){
     return MenuArray.map(Item => {
-        const {image,name,ingredients,price,id} = Item
+        const {image,name,ingredients,Calories,price,id} = Item
         return `<section class="Menu">  
                     <div id="MenuInner" class="MenuInner">
                       <img class="menuImg" src="${image}">
@@ -121,6 +121,7 @@ function RenderMenuCard(){
                         <h2 class="MenuName">${name}</h2>
                         <p class="MenuIngredients">${ingredients}</p>
                         <p class="MenuPrice">$${price}</p>
+                        <p class="DishCals"> kcal ${Calories}</p>
                      </div>  
                      
                         <div class="AddContainer">
