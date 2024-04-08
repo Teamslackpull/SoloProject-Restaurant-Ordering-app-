@@ -1,70 +1,19 @@
 
-!!!!! IMPORTANT( DE CODE IS GEUPDATE HET ENIGE PROBLEEM WAT OVER IS IS DAT ZODRA IK 1 ITEM VERWIJDER DE DISCOUNT VERDWIJNT TERWIJL HET TOTAAL BEDRAG NOG BOVEN DE 20 DUS ALS IK 40 EUR0 HEB HOOR IK 5 DISCOUNT TE HEBBEN MAAR ALS IK
-1 ITEM VAN 12 EURO WEG HAAL IS MN DISCOUNT WEG TERWIJL IK NOG 35 EURO HEB IN MN CART 
 
-Ik heb een restaurant Ordering App gemaakt voor het eind project Javascript we sloten de allerlaatse module af met een solo Project.
+This repository contains a restaurant ordering app developed in JavaScript. This project was the culmination of the advanced JavaScript module at Scrimba. I am immensely proud of the work I have accomplished and the skills I have acquired throughout this project.
 
-we kregen basic requirements die ik allemaal gehaald heb en nog wat stretch Goals.
+Project Overview
+The restaurant ordering app was created to meet specific expectations, including adhering to design specifications while also adding my own personal touch. It incorporates essential functionalities such as adding and removing items from the order, a pop-up form modal for customer information input, and a thank you modal displayed upon order completion.
 
-ik ben begonnen aan de stretch goal doormiddel van een Discount offering toe te voegen wanneer de prijs boven een bepaald aantal komt.
+Accomplishments
+Throughout the development process, I encountered various challenges, including debugging and troubleshooting. One particularly frustrating bug took days to resolve, primarily due to overthinking the issue. Despite attempting to solve it independently and even seeking assistance from ChatGPT, the solution remained elusive. However, after revisiting the problem with a fresh perspective, I was able to overcome it. (I also cheered loudly; I think the neighbors heard me)
 
-wat hieronder is staat is alle code die met de functie aftrekken en de discount te maken heeft zie volledige code in de js file 
+Additionally, I successfully implemented stretch goals, such as incorporating discounts into the app.
 
-hier lusiteren we voor clicks en we kijken of E.target.classList de desbetreffende class bevat als dat zo is runnen we de code er onder
+Acknowledgements
+I would like to express my gratitude to Scrimba for providing a platform for learning and development. I am thankful for the support and guidance of my friend, [Wolf], whose expertise helped me navigate the final hurdles in completing this project.
 
-: E.target.classList.contains("Remove") ?
-               (SubtractPriceFromTotal(E.target.dataset.remove),E.target.closest(".Orders").remove()) : null
+Conclusion
+In conclusion, I am thrilled with the outcome of this project. The restaurant ordering app is a testament to my dedication to learning and problem-solving skills. I look forward to applying these newfound skills to future projects and endeavors.
 
-
- let TotalPrice = 0 
- let HasDiscount = false
-
-dan maken we een function die 2 parameters in neemt Item en een default parameter die nog niet gebruikt wordt
-dan halen we het id van Totalprice op uit de DOM
- We voegen TotalPrice tellen totalprice dit is nog null
- hier kijken we of de Gebruiker in aamerking komt voor een discount hier gebruiken we een if statement voor en een logical NOT operator die steeds switched 
-
-const CalculateTotalPrice = (Item, Discount = 0) => {
-  
-    const TotalAmount = document.getElementById("TotalPriceCount")
-    TotalPrice += Item
-    TotalAmount.textContent = `$${TotalPrice}`
-     
-     if (HasDiscount && TotalPrice > 20) {
-         TotalPrice -= Discount
-         TotalAmount.textContent  = `Discount -$${Discount} $${TotalPrice}`
-    
-    
-     }
-     HasDiscount = !HasDiscount
-}
-
-hier maken we de subtract function 
-
-const subtract = (item , Discount = 0 )=> {
-    const TotalAmount = document.getElementById("TotalPriceCount")
-    TotalPrice -= item
-
-    if (TotalPrice <= 0) {
-        HideOrderContainer();
-    }
-    TotalAmount.textContent = `$${TotalPrice}`
-         else if (TotalPrice  < 20) {
-             TotalPrice -= Discount;
-             TotalAmount.textContent = `$${TotalPrice}`;
-         }
-
-}
-
-Hier neemt de functie een parameter DishID2 die neemt de data van het argument van E.target.dataset.remove in
-
-const SubtractPriceFromTotal = DishID2 => {
-    const FindPriceInArray = MenuArray.find(Item => Item.id === DishID2)
-    
-   subtract(FindPriceInArray.price, 5)
-}
-
- Het gebruik van Find array method om het desbetreffende element die overeenkomt in de MenuArray
- dan krijgt subtract de prijs van het desbetreffende geklikte product die wordt gegeven aan item
-
-IK hoop dat dit je een goed begrip geeft van het probleem ( de discount wordt niet goed toegevoegd en verwijderd wanneer het totaal bedrag onder de 20 komt )
+Thank you for visiting this repository!
