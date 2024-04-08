@@ -11,7 +11,7 @@ Throughout the development process, I encountered various challenges, including 
 Additionally, I successfully implemented stretch goals, such as incorporating discounts into the app.
 
 Acknowledgements
-I would like to express my gratitude to Scrimba for providing a platform for learning and development. I am thankful for the support and guidance of my friend, [Wolf], whose expertise helped me navigate the final hurdles in completing this project.
+I would like to express my gratitude to Scrimba for providing a platform for learning and development. I am thankful for the support and guidance of my friend, @Jurkyy, whose expertise helped me navigate the final hurdles in completing this project.
 
 Conclusion
 In conclusion, I am thrilled with the outcome of this project. The restaurant ordering app is a testament to my dedication to learning and problem-solving skills. I look forward to applying these newfound skills to future projects and endeavors.
